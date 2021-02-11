@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="AppUwpLottie.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppUwpLottie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <muxc:AnimatedVisualPlayer Grid.Row="0" Grid.Column="0">
+            <lottie:LottieVisualSource UriSource="ms-appx:///AnimatedVisuals/LottieLogo1.json"/>
+        </muxc:AnimatedVisualPlayer>
+
+        <!-- https://lottiefiles.com/15116-count-down-10 -->
+        <muxc:AnimatedVisualPlayer Grid.Column="1" Grid.Row="0">
+            <lottie:LottieVisualSource UriSource="https://assets9.lottiefiles.com/packages/lf20_xLFkZG.json"/>
+        </muxc:AnimatedVisualPlayer>
+
+        <!-- https://lottiefiles.com/11250-count-down -->
+        <muxc:AnimatedVisualPlayer Grid.Column="0" Grid.Row="1">
+            <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_QY4ltj.json"/>
+        </muxc:AnimatedVisualPlayer>
+
+        <!-- https://lottiefiles.com/8384-count-down-animation -->
+        <muxc:AnimatedVisualPlayer Grid.Column="1" Grid.Row="1">
+            <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json"/>
+        </muxc:AnimatedVisualPlayer>
+    </Grid>
+</Page>
