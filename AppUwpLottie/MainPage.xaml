@@ -8,35 +8,35 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
     mc:Ignorable="d"
+    MinHeight="100"
+    Height="300"
+    Width="800"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        
-        <muxc:AnimatedVisualPlayer Grid.Row="0" Grid.Column="0">
+    <StackPanel Orientation="Horizontal" Margin="0" Padding="0">
+        <StackPanel.Resources>
+            <Style TargetType="muxc:AnimatedVisualPlayer">
+                <Setter Property="MaxWidth" Value="200" />
+                <Setter Property="MaxHeight" Value="200" />
+            </Style>
+        </StackPanel.Resources>
+        <muxc:AnimatedVisualPlayer>
             <lottie:LottieVisualSource UriSource="ms-appx:///AnimatedVisuals/LottieLogo1.json"/>
         </muxc:AnimatedVisualPlayer>
 
         <!-- https://lottiefiles.com/15116-count-down-10 -->
-        <muxc:AnimatedVisualPlayer Grid.Column="1" Grid.Row="0">
+        <muxc:AnimatedVisualPlayer>
             <lottie:LottieVisualSource UriSource="https://assets9.lottiefiles.com/packages/lf20_xLFkZG.json"/>
         </muxc:AnimatedVisualPlayer>
 
         <!-- https://lottiefiles.com/11250-count-down -->
-        <muxc:AnimatedVisualPlayer Grid.Column="0" Grid.Row="1">
+        <muxc:AnimatedVisualPlayer>
             <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_QY4ltj.json"/>
         </muxc:AnimatedVisualPlayer>
 
         <!-- https://lottiefiles.com/8384-count-down-animation -->
-        <muxc:AnimatedVisualPlayer Grid.Column="1" Grid.Row="1">
+        <muxc:AnimatedVisualPlayer>
             <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json"/>
         </muxc:AnimatedVisualPlayer>
-    </Grid>
+    </StackPanel>
 </Page>
