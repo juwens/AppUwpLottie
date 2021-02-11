@@ -13,7 +13,10 @@
     Width="800"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel Orientation="Horizontal" Margin="0" Padding="0">
+    <StackPanel>
+        <TextBox Name="tbUri" KeyDown="tbUri_KeyDown" />
+        <TextBlock x:Name="tbError" />
+        <StackPanel Orientation="Horizontal" Margin="0" Padding="0">
         <StackPanel.Resources>
             <Style TargetType="muxc:AnimatedVisualPlayer">
                 <Setter Property="MaxWidth" Value="200" />
@@ -38,5 +41,10 @@
         <muxc:AnimatedVisualPlayer>
             <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json"/>
         </muxc:AnimatedVisualPlayer>
+
+        <muxc:AnimatedVisualPlayer>
+            <lottie:LottieVisualSource x:Name="lottieOnline" />
+        </muxc:AnimatedVisualPlayer>
+    </StackPanel>
     </StackPanel>
 </Page>

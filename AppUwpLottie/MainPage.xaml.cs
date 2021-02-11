@@ -26,5 +26,21 @@ namespace AppUwpLottie
         {
             this.InitializeComponent();
         }
+
+        private void tbUri_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                tbError.Text = "";
+                try
+                {
+                    lottieOnline.UriSource = new Uri(tbUri.Text);
+                }
+                catch (Exception ex)
+                {
+                    tbError.Text = ex.Message;
+                }
+            }
+        }
     }
 }
