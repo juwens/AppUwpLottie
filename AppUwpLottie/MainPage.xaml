@@ -2,49 +2,77 @@
     x:Class="AppUwpLottie.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:AppUwpLottie"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:local="using:AppUwpLottie"
     xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
-    mc:Ignorable="d"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muc="using:Microsoft.UI.Controls"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    MinWidth="200"
     MinHeight="100"
-    Height="300"
-    Width="800"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="muxc:AnimatedVisualPlayer">
+            <Setter Property="Width" Value="130" />
+            <Setter Property="Height" Value="130" />
+        </Style>
+    </Page.Resources>
 
     <StackPanel>
-        <TextBox Name="tbUri" KeyDown="tbUri_KeyDown" />
-        <TextBlock x:Name="tbError" />
-        <StackPanel Orientation="Horizontal" Margin="0" Padding="0">
-        <StackPanel.Resources>
-            <Style TargetType="muxc:AnimatedVisualPlayer">
-                <Setter Property="MaxWidth" Value="200" />
-                <Setter Property="MaxHeight" Value="200" />
-            </Style>
-        </StackPanel.Resources>
-        <muxc:AnimatedVisualPlayer>
-            <lottie:LottieVisualSource UriSource="ms-appx:///AnimatedVisuals/LottieLogo1.json"/>
-        </muxc:AnimatedVisualPlayer>
+        <VariableSizedWrapGrid Orientation="Horizontal">
+            <Grid Background="#1e1e1e">
+                <muxc:AnimatedVisualPlayer>
+                    <lottie:LottieVisualSource UriSource="ms-appx:///AnimatedVisuals/mya.json" />
+                </muxc:AnimatedVisualPlayer>
+            </Grid>
 
-        <!-- https://lottiefiles.com/15116-count-down-10 -->
-        <muxc:AnimatedVisualPlayer>
-            <lottie:LottieVisualSource UriSource="https://assets9.lottiefiles.com/packages/lf20_xLFkZG.json"/>
-        </muxc:AnimatedVisualPlayer>
+            <Grid Background="#1e1e1e">
+                <!--  https://lottiefiles.com/15116-count-down-10  -->
+                <muxc:AnimatedVisualPlayer>
+                    <lottie:LottieVisualSource UriSource="https://assets9.lottiefiles.com/packages/lf20_xLFkZG.json" />
+                </muxc:AnimatedVisualPlayer>
+            </Grid>
 
-        <!-- https://lottiefiles.com/11250-count-down -->
-        <muxc:AnimatedVisualPlayer>
-            <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_QY4ltj.json"/>
-        </muxc:AnimatedVisualPlayer>
+            <Grid Background="#1e1e1e">
+                <!--  https://lottiefiles.com/11250-count-down  -->
+                <muxc:AnimatedVisualPlayer>
+                    <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_QY4ltj.json" />
+                </muxc:AnimatedVisualPlayer>
+            </Grid>
 
-        <!-- https://lottiefiles.com/8384-count-down-animation -->
-        <muxc:AnimatedVisualPlayer>
-            <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json"/>
-        </muxc:AnimatedVisualPlayer>
+            <Grid Background="#1e1e1e">
+                <!--  https://lottiefiles.com/8384-count-down-animation  -->
+                <muxc:AnimatedVisualPlayer>
+                    <lottie:LottieVisualSource UriSource="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json" />
+                </muxc:AnimatedVisualPlayer>
+            </Grid>
+        </VariableSizedWrapGrid>
 
-        <muxc:AnimatedVisualPlayer>
-            <lottie:LottieVisualSource x:Name="lottieOnline" />
-        </muxc:AnimatedVisualPlayer>
-    </StackPanel>
+        <Grid Margin="20">
+            <StackPanel>
+                <ComboBox x:Name="furtherExamples" HorizontalAlignment="Stretch" />
+                <Grid Background="#1e1e1e">
+                    <muxc:AnimatedVisualPlayer>
+                        <lottie:LottieVisualSource x:Name="lottieFurther" />
+                    </muxc:AnimatedVisualPlayer>
+                </Grid>
+                <HyperlinkButton x:Name="hlGotoLottieFiles" Content="open on lottiefiles.com" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Background="#1e1e1e">
+            <StackPanel>
+                <TextBox
+                    Name="tbUri"
+                    KeyDown="tbUri_KeyDown"
+                    Text="https://assets1.lottiefiles.com/packages/lf20_35TmD3.json" />
+                <TextBlock x:Name="tbError" />
+                <muxc:AnimatedVisualPlayer>
+                    <lottie:LottieVisualSource x:Name="lottieOnline" />
+                </muxc:AnimatedVisualPlayer>
+            </StackPanel>
+        </Grid>
     </StackPanel>
 </Page>

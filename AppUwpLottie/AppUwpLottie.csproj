@@ -151,7 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.10</Version>
+      <Version>6.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Lottie">
       <Version>6.1.0</Version>
@@ -162,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AnimatedVisuals\LottieLogo1.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnimatedVisuals\mya.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
